@@ -72,6 +72,11 @@ div#logo {
 }
 
 
+div#main {
+	height: 370px;
+}
+
+
 footer {
 	width: 960px;
 	height: 90px;
