@@ -142,9 +142,13 @@ nav li {
 	display: inline;
 	padding-right: 22px;
 }
-footer ul, footer ol { list-style: none; margin: 0; padding: 0; }
+footer ul, footer ol {
+	/*list-style-image: url("../images/pipe.gif");*/
+	margin: 0;
+	padding: 0;
+}
 footer li {
-	display: inline;
+	/*display: inline;*/
 	font-size: 11px;
 }
 
