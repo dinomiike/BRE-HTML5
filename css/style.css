@@ -53,8 +53,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 div#container {
 	margin: 0 auto;
 	width: 960px;
-	height: 500px;
 	background-image: url("../images/10_bre_home_image.jpg");
+	background-repeat: no-repeat;
 }
 
 
@@ -73,7 +73,7 @@ div#logo {
 
 
 div#main {
-	height: 370px;
+	height: 520px;
 }
 
 
@@ -81,6 +81,20 @@ footer {
 	width: 960px;
 	height: 90px;
 	background: #614d3f;
+}
+
+footer nav#subnav {
+	padding: 15px 0px 10px 30px;
+}
+
+footer nav#regions {
+	padding: 0px 25px 35px 30px;
+}
+
+section#action {
+	margin: 0 auto;
+	width: 929px;
+	background: #fff;
 }
 
 
@@ -91,6 +105,28 @@ footer {
 a { color: #00e; }
 a:visited { color: #551a8b; }
 a:focus { outline: thin dotted; }
+
+footer a:link, a:visited {
+	text-decoration: none;
+	font-size: 11px;
+}
+
+footer a:hover, a:active {
+	text-decoration: underline;
+	font-size: 11px;
+}
+
+footer #subnav a:link, a:visited, a:active, a:hover {
+	color: #E0d9c7;
+}
+
+footer #regions a:link, a:visited, a:active, a:hover {
+	color: #b3937f;
+}
+
+/*footer nav ul a:link, a:visited {
+	color: #e0d9c7;
+}*/
 
 /* Improve readability when focused and hovered in all browsers: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: 0; }
@@ -137,20 +173,43 @@ sub { bottom: -0.25em; }
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
 dd { margin: 0 0 0 40px; }
-nav ul, nav ol { list-style: none; margin: 0; padding: 0; }
-nav li {
+header nav ul, header nav ol { list-style: none; margin: 0; padding: 0; }
+header nav li {
 	display: inline;
 	padding-right: 22px;
 }
+
 footer ul, footer ol {
 	/*list-style-image: url("../images/pipe.gif");*/
 	margin: 0;
 	padding: 0;
+	/*list-style: none;*/
 }
+
 footer li {
-	/*display: inline;*/
+	display: inline;
+}
+
+footer nav#subnav ul li {
+	color: #e0d9c7;
 	font-size: 11px;
 }
+
+footer nav#subnav ul li span {
+	font: 13px Georgia, Times, "Times New Roman";
+}
+
+footer nav#subnav ul li:nth-child(n+2):before {
+	font-size: 13px;
+	color: #e0d9c7;
+	content: "| ";
+}
+
+footer nav#regions ul li:nth-child(n+2):before {
+	color: #b3837f;
+	content: "| ";
+}
+
 
 
 /* =============================================================================
