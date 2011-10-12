@@ -64,6 +64,8 @@ header {
 	height: 130px;
 	background: #fff;
 	/*padding-left: 10px;*/
+	-moz-border-radius: 0px 0px 15px 15px;
+	border-radius: 0px 0px 15px 15px;
 }
 
 
@@ -91,10 +93,25 @@ footer nav#regions {
 	padding: 0px 25px 35px 30px;
 }
 
+section#message {
+	position: relative;
+	top: 350px;
+	left: 20px;
+	/*margin: 330px 0px 0px 20px;*/
+	font: 32px Georgia, Times, "Times New Roman";
+	color: #fff;
+}
+
 section#action {
+	position: relative;
+	top: 364px;
 	margin: 0 auto;
+	/*margin-top: 10px;*/
 	width: 929px;
+	height: 80px;
 	background: #fff;
+	-moz-border-radius: 15px 15px 0px 0px;
+	border-radius: 15px 15px 0px 0px;
 }
 
 
