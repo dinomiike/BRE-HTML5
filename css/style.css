@@ -95,16 +95,33 @@ footer nav#regions {
 
 section#message {
 	position: relative;
-	top: 350px;
-	left: 20px;
-	/*margin: 330px 0px 0px 20px;*/
+	margin: auto;
+	top: 404px;
+	width: 929px;
+	height: 80px;
 	font: 32px Georgia, Times, "Times New Roman";
+	background: #fff;
+	-moz-border-radius: 15px 15px 0px 0px;
+	border-radius: 15px 15px 0px 0px;
+}
+
+span#label {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	top: 340px;
+	left: 20px;
+	z-index: 10;
 	color: #fff;
+	font: 32px Georgia, Times, "Times New Roman";
 }
 
 section#action {
 	position: relative;
-	top: 364px;
+	/*position: absolute;*/
+	/*top: 368px;*/
+	/*top: 570px;*/
+	bottom: 0px;
 	margin: 0 auto;
 	/*margin-top: 10px;*/
 	width: 929px;
@@ -113,6 +130,13 @@ section#action {
 	-moz-border-radius: 15px 15px 0px 0px;
 	border-radius: 15px 15px 0px 0px;
 }
+
+/*div#action {
+	height: 80px;
+	background: #fff;
+	-moz-border-radius: 15px 15px 0px 0px;
+	border-radius: 15px 15px 0px 0px;
+}*/
 
 
 /* =============================================================================
