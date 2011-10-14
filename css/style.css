@@ -96,11 +96,23 @@ footer nav#regions {
 section#message {
 	position: relative;
 	margin: auto;
-	top: 404px;
+	top: 320px;
 	width: 929px;
-	height: 80px;
+	height: 200px;
+	/*font: 32px Georgia, Times, "Times New Roman";*/
+	/*background: #fff;*/
+}
+
+div#label {
+	height: 120px;
 	font: 32px Georgia, Times, "Times New Roman";
+	color: #fff;
+}
+
+div#action {
 	background: #fff;
+	height: 80px;
+	text-align: center;
 	-moz-border-radius: 15px 15px 0px 0px;
 	border-radius: 15px 15px 0px 0px;
 }
@@ -137,6 +149,10 @@ section#action {
 	-moz-border-radius: 15px 15px 0px 0px;
 	border-radius: 15px 15px 0px 0px;
 }*/
+
+select#apttype {
+	font: 22px Georgia, Times, "Times New Roman";
+}
 
 
 /* =============================================================================
