@@ -38,7 +38,7 @@ body {
 	background: #ccc;
 }
 
-body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+body, button, input, textarea { font-family: sans-serif; color: #222; }
 
 /* 
  * These selection declarations have to be separate
@@ -153,6 +153,29 @@ section#action {
 select#apttype {
 	font: 22px Georgia, Times, "Times New Roman";
 }
+
+fieldset#findapt {
+	padding: 15px 0px 0px 0px;
+}
+
+label {
+	margin-right: 30px;
+	height: 100px;
+	font: 14px Georgia, Times, "Times New Roman";
+}
+
+input#search {
+	width: 240px;
+	background: #549637;
+	color: #fff;
+	font: 18px Georgia, Times, "Times New Roman";
+	padding: 15px 0px 15px 0px;
+	border: 0px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+}
+
+
 
 
 /* =============================================================================
@@ -319,7 +342,7 @@ label { cursor: pointer; }
  * 3. Define consistent vertical alignment display in all browsers
  */
 
-button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
 
 /*
  * 1. Define line-height as normal to match FF3/4 (set using !important in the UA stylesheet)

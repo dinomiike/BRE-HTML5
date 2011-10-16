@@ -36,19 +36,17 @@
 	<div id="main" role="main">
 		<section id="message">
 			<div id="label">
-				We can help you<br>
-				find your next home
+				What type of apartment<br>
+				are you looking for?
 			</div>
 			<div id="action">
-				<div>
-				What kind of apartment are you looking for?
-				<select id="apttype" name="apttype">
-					<option>Click here to get started</option>
-					<option value="studio">Studio</option>
-					<option value="1br">1 Bedroom</option>
-					<option value="2br">2 Bedrooms</options>
-					<option value="3br">3 Bedrooms</options>
-				</select>
+				<fieldset id="findapt">
+					<input type="radio" id="aptstudio" name="apttype" value="studio"> <label for="aptstudio">Studio</label>
+					<input type="radio" id="apt1br" name="apttype" value="1"> <label for="apt1br">1 Bedroom</label>
+					<input type="radio" id="apt2br" name="apttype" value="2"> <label for="apt2br">2 Bedroom</label>
+					<input type="radio" id="apt3br" name="apttype" value="3"> <label for="apt3br">3 Bedroom</label>
+					<input type="submit" id="search" name="search" value="Search for an apartment">
+				</fieldset>
 			</div>
 		</section>
 	</div>
