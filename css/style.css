@@ -175,6 +175,10 @@ input#search {
 	border-radius: 7px;
 }
 
+#areaArizona, #areaCalifornia, #areaDenver, #areaWashington {
+	display: none;
+}
+
 
 
 
