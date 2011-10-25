@@ -21,17 +21,19 @@
 
 <div id="container">
 	<header>
-		<div id="logo"><img src="images/logo.jpg" width="116" height="90"></div>
-		<nav>
-			<ul>
-				<li><a href="http://www.breproperties.com">Home</a></li>
-				<li><a href="http://www.breproperties.com/communities">Communities</a></li>
-				<li><a href="http://www.breproperties.com/careers">Careers</a></li>
-				<li><a href="http://www.snl.com/irweblinkx/corporateprofile.aspx?iid=102924">Investors</a></li>
-				<li><a href="http://www.breproperties.com/about">Company</a></li>
-				<li><a href="http://www.breproperties.com/residents">Residents</a></li>
-			</ul>
-		</nav>
+		<div id="headalign">
+			<div id="logo"><img src="images/logo.jpg" width="116" height="90"></div>
+			<nav>
+				<ul>
+					<li><a href="http://www.breproperties.com">Home</a></li>
+					<li><a href="http://www.breproperties.com/communities">Communities</a></li>
+					<li><a href="http://www.breproperties.com/careers">Careers</a></li>
+					<li><a href="http://www.snl.com/irweblinkx/corporateprofile.aspx?iid=102924">Investors</a></li>
+					<li><a href="http://www.breproperties.com/about">Company</a></li>
+					<li><a href="http://www.breproperties.com/residents">Residents</a></li>
+				</ul>
+			</nav>
+		</div>
 	</header>
 	<div id="main" role="main">
 		<section id="message">
@@ -42,60 +44,29 @@
 				your next apartment home
 			</div>
 			<div id="action">
-				<div>To search for an apartment, tell us where you'd like to live</div>
-				<fieldset id="findapt">
-					<!--<input type="radio" id="aptstudio" name="apttype" value="studio"> <label for="aptstudio">Studio</label>
-					<input type="radio" id="apt1br" name="apttype" value="1"> <label for="apt1br">1 Bedroom</label>
-					<input type="radio" id="apt2br" name="apttype" value="2"> <label for="apt2br">2 Bedroom</label>
-					<input type="radio" id="apt3br" name="apttype" value="3"> <label for="apt3br">3 Bedroom</label>
-					<input type="submit" id="search" name="search" value="Search for an apartment">-->
-					<input type="radio" id="regArizona" name="regState" value="Arizona" onClick="setCity(this);"> <label for="regArizona">Arizona</label>
-					<input type="radio" id="regCalifornia" name="regState" value="California" onClick="setCity(this);"> <label for="regCalifornia">California</label>
-					<input type="radio" id="regDenver" name="regState" value="Denver" onClick="setCity(this);"> <label for="regDenver">Denver</label>
-					<input type="radio" id="regWashington" name="regState" value="Washington" onClick="setCity(this);"> <label for="regWashington">Washington</label>
-					<div id="areas">
-						<!--<div>Optionally, would you like to search within a city?</div>-->
-						<div id="areaArizona">
-							<ul>
-								<li>Chandler</li>
-								<li>Phoenix</li>
-							</ul>
-						</div>
-
-						<div id="areaCalifornia">
-							<ul>
-								<li>Sacramento</li>
-								<li>San Francisco Bay Area</li>
-								<li>Inland Empire</li>
-								<li>Los Angeles County</li>
-								<li>Orange County</li>
-							</ul>
-						</div>
-
-						<div id="areaDenver">
-							<ul>
-								<li>Centennial</li>
-								<li>Greenwood Village</li>
-								<li>Highlands Ranch</li>
-								<li>Littleton</li>
-								<li>Thornton</li>
-								<li>Westminster</li>
-							</ul>
-						</div>
-
-						<div id="areaWashington">
-							<ul>
-								<li>Bellevue</li>
-								<li>Bothell</li>
-								<li>Mill Creek</li>
-								<li>Redmond</li>
-								<li>Renton</li>
-								<li>Seattle</li>
-								<li>Shoreline</li>
-							</ul>
-						</div>
-					</div>
-				</fieldset>
+				<div id="actionalign">
+					<div>To search for an apartment, tell us where you'd like to live</div>
+					<fieldset id="findapt">
+						<input type="radio" id="aptstudio" name="apttype" value="studio"> <label for="aptstudio">Studio</label>
+						<input type="radio" id="apt1br" name="apttype" value="1"> <label for="apt1br">1 Bedroom</label>
+						<input type="radio" id="apt2br" name="apttype" value="2"> <label for="apt2br">2 Bedroom</label>
+						<input type="radio" id="apt3br" name="apttype" value="3"> <label for="apt3br">3 Bedroom</label>
+						<input type="submit" id="search" name="search" value="Search for an apartment">
+						<!--<input type="radio" id="regArizona" name="regState" value="Arizona" onClick="setCity(this);"> <label for="regArizona">Arizona</label>
+						<input type="radio" id="regCalifornia" name="regState" value="California" onClick="setCity(this);"> <label for="regCalifornia">California</label>
+						<input type="radio" id="regSacramento" name="regState" value="Sacramento"> <label for="regSacramento">Sacramento</label>
+						<input type="radio" id="regSfBayArea" name="regState" value="SFBayArea"> <label for="regSfBayArea">San Francisco Bay Area</label>
+						<input type="radio" id="regInlandEmpire" name="regState" value="InlandEmpire"> <label for="regInlandEmpire">Inland Empire</label>
+						<input type="radio" id="regLosAngeles" name="regState" value="LosAngeles"> <label for="regLosAngeles">Los Angeles County</label>
+						<input type="radio" id="regOrangeCounty" name="regState" value="OrangeCounty"> <label for="regOrangeCounty">Orange County</label>
+						<input type="radio" id="regDenver" name="regState" value="Denver" onClick="setCity(this);"> <label for="regDenver">Denver</label>
+						<input type="radio" id="regWashington" name="regState" value="Washington" onClick="setCity(this);"> <label for="regWashington">Washington</label>-->
+					</fieldset>
+					<fieldset>
+						<input type="radio" id="1bath" name="baths" value="1"> <label for="1bath">1 Bathroom</label>
+						<input type="radio" id="2bath" name="baths" value="2"> <label for="2bath">2 Bathrooms</label>	
+					</fieldset>
+				</div>
 			</div>
 		</section>
 	</div>
