@@ -130,7 +130,7 @@ div#actionalign {
 	position: relative;
 	top: 15px;
 	left: 15px;
-	width: 850px;
+	width: 895px;
 }
 
 span#label {
@@ -170,22 +170,61 @@ select#apttype {
 	font: 22px Georgia, Times, "Times New Roman";
 }
 
-fieldset#findapt {
-	padding: 15px 0px 0px 0px;
+h4 {
+	margin: 0;
+	padding: 0;
+	font: 16px Georgia, Times, "Times New Roman";
+}
+
+fieldset {
+	position: relative;
+	top: 5px;
+	float: left;
+}
+
+fieldset#selectbeds {
+	/*padding: 15px 0px 0px 0px;*/
+	margin: 0;
+	padding: 0;
+	/*width: 390px;*/
+	border: thin solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #999;
+}
+
+fieldset#selectbaths {
+	padding-left: 15px;
+	border: thin solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #999;
+}
+
+fieldset#selectdate {
+	padding-left: 15px;
+}
+
+fieldset#searchsubmit {
+	padding-left: 15px;
+}
+
+fieldset legend {
+	margin: 0;
+	padding: 0;
+	font: 11px Helvetica, Arial, sans-serif;
 }
 
 label {
-	margin-right: 30px;
+	margin-right: 20px;
 	height: 100px;
-	font: 14px Georgia, Times, "Times New Roman";
+	font: 13px Georgia, Times, "Times New Roman";
 }
 
-input#search {
-	width: 240px;
+input[type=submit] {
+	width: 140px;
 	background: #549637;
 	color: #fff;
 	font: 18px Georgia, Times, "Times New Roman";
-	padding: 15px 0px 15px 0px;
+	padding: 8px 0px 8px 0px;
 	border: 0px;
 	-moz-border-radius: 7px;
 	border-radius: 7px;

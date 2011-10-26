@@ -2,6 +2,10 @@
 
 */
 
+$(document).ready(function() {
+	$("input#movedate").datepicker();
+});
+
 function setCity(region) {
 	var regionName = region.value;
 	document.getElementById("area"+regionName).style.display = "block";
