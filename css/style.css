@@ -61,7 +61,7 @@ div#container {
 header {
 	margin: 0 auto;
 	width: 929px;
-	height: 130px;
+	height: 115px;
 	background: #fff;
 	/*padding-left: 10px;*/
 	-moz-border-radius: 0px 0px 15px 15px;
@@ -87,6 +87,12 @@ div#main {
 	height: 520px;
 }
 
+div#mainsearch {
+	position: relative;
+	top: 5px;
+	background: #fff;
+}
+
 
 footer {
 	width: 960px;
@@ -94,12 +100,27 @@ footer {
 	background: #614d3f;
 }
 
+footer div#eho {
+	position: relative;
+	float: left;
+	width: 65px;
+	height: 90px;
+	background-image: url('../images/eho.gif');
+	background-repeat: no-repeat;
+	background-position: 20px 20px;
+}
+
 footer nav#subnav {
-	padding: 15px 0px 10px 30px;
+	position: relative;
+	float: left;
+	padding: 15px 0px 10px 0px;
 }
 
 footer nav#regions {
-	padding: 0px 25px 35px 30px;
+	position: relative;
+	float: left;
+	width: 860px;
+	padding: 0px 25px 35px 0px;
 }
 
 section#message {
@@ -215,9 +236,18 @@ fieldset legend {
 }
 
 label {
-	margin-right: 20px;
+	/*margin-right: 20px;*/
+	margin: 0;
+	padding-right: 18px;
+	/*padding: 0;*/
 	height: 100px;
 	font: 13px Georgia, Times, "Times New Roman";
+}
+
+input[type=radio] {
+	margin: 0;
+	padding: 0;
+	width: 15px;
 }
 
 input[type=submit] {
@@ -232,7 +262,7 @@ input[type=submit] {
 }
 
 input#movedate {
-	width: 100px;
+	width: 90px;
 }
 
 #areaArizona, #areaCalifornia, #areaDenver, #areaWashington {
