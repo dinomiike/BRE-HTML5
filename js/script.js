@@ -3,7 +3,12 @@
 */
 
 $(document).ready(function() {
-	$("input#movedate").datepicker();
+	$("input#movedate").datepicker({
+		//showOn: 'button',
+		//buttonImage: 'images/calendar.gif',
+		//buttonImageOnly: true,
+		minDate: -0
+	});
 });
 
 function setCity(region) {

@@ -14,7 +14,8 @@
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/themes/mint-choc/jquery.ui.datepicker.css">
+	<!--<link rel="stylesheet" href="css/themes/mint-choc/jquery.ui.datepicker.css">-->
+	<link rel="stylesheet" href="css/themes/mint-choc/jquery-ui-1.8.16.custom.css">
 
 	<script src="js/libs/modernizr-2.0.6.min.js"></script>
 </head>
@@ -45,34 +46,36 @@
 			<div id="action">
 				<div id="actionalign">
 					<h4>What kind of apartment are you looking for?</h4>
-					<fieldset id="selectbeds">
-						<legend>Number of Beds</legend>
-						<input type="radio" id="aptstudio" name="apttype" value="studio"> <label for="aptstudio">Studio</label>
-						<input type="radio" id="apt1br" name="apttype" value="1"> <label for="apt1br">1 Bedroom</label>
-						<input type="radio" id="apt2br" name="apttype" value="2"> <label for="apt2br">2 Bedrooms</label>
-						<input type="radio" id="apt3br" name="apttype" value="3"> <label for="apt3br">3 Bedrooms</label>
-						<!--<input type="radio" id="regArizona" name="regState" value="Arizona" onClick="setCity(this);"> <label for="regArizona">Arizona</label>
-						<input type="radio" id="regCalifornia" name="regState" value="California" onClick="setCity(this);"> <label for="regCalifornia">California</label>
-						<input type="radio" id="regSacramento" name="regState" value="Sacramento"> <label for="regSacramento">Sacramento</label>
-						<input type="radio" id="regSfBayArea" name="regState" value="SFBayArea"> <label for="regSfBayArea">San Francisco Bay Area</label>
-						<input type="radio" id="regInlandEmpire" name="regState" value="InlandEmpire"> <label for="regInlandEmpire">Inland Empire</label>
-						<input type="radio" id="regLosAngeles" name="regState" value="LosAngeles"> <label for="regLosAngeles">Los Angeles County</label>
-						<input type="radio" id="regOrangeCounty" name="regState" value="OrangeCounty"> <label for="regOrangeCounty">Orange County</label>
-						<input type="radio" id="regDenver" name="regState" value="Denver" onClick="setCity(this);"> <label for="regDenver">Denver</label>
-						<input type="radio" id="regWashington" name="regState" value="Washington" onClick="setCity(this);"> <label for="regWashington">Washington</label>-->
-					</fieldset>
-					<fieldset id="selectbaths">
-						<legend>Number of Bathrooms</legend>
-						<input type="radio" id="1bath" name="baths" value="1"> <label for="1bath">1 Bathroom</label>
-						<input type="radio" id="2bath" name="baths" value="2"> <label for="2bath">2 Bathrooms</label>	
-					</fieldset>
-					<fieldset id="selectdate">
-						<legend>Move-in Date</legend>
-						<input type="text" id="movedate">
-					</fieldset>
-					<fieldset id="searchsubmit">
-						<input type="submit" id="search" name="search" value="Search">
-					</fieldset>
+					<form name="findapt" method="post" action="search/">
+						<fieldset id="selectbeds">
+							<legend>Number of Beds</legend>
+							<input type="radio" id="aptstudio" name="apttype" value="studio"> <label for="aptstudio">Studio</label>
+							<input type="radio" id="apt1br" name="apttype" value="1"> <label for="apt1br">1 Bedroom</label>
+							<input type="radio" id="apt2br" name="apttype" value="2"> <label for="apt2br">2 Bedrooms</label>
+							<input type="radio" id="apt3br" name="apttype" value="3"> <label for="apt3br">3 Bedrooms</label>
+							<!--<input type="radio" id="regArizona" name="regState" value="Arizona" onClick="setCity(this);"> <label for="regArizona">Arizona</label>
+							<input type="radio" id="regCalifornia" name="regState" value="California" onClick="setCity(this);"> <label for="regCalifornia">California</label>
+							<input type="radio" id="regSacramento" name="regState" value="Sacramento"> <label for="regSacramento">Sacramento</label>
+							<input type="radio" id="regSfBayArea" name="regState" value="SFBayArea"> <label for="regSfBayArea">San Francisco Bay Area</label>
+							<input type="radio" id="regInlandEmpire" name="regState" value="InlandEmpire"> <label for="regInlandEmpire">Inland Empire</label>
+							<input type="radio" id="regLosAngeles" name="regState" value="LosAngeles"> <label for="regLosAngeles">Los Angeles County</label>
+							<input type="radio" id="regOrangeCounty" name="regState" value="OrangeCounty"> <label for="regOrangeCounty">Orange County</label>
+							<input type="radio" id="regDenver" name="regState" value="Denver" onClick="setCity(this);"> <label for="regDenver">Denver</label>
+							<input type="radio" id="regWashington" name="regState" value="Washington" onClick="setCity(this);"> <label for="regWashington">Washington</label>-->
+						</fieldset>
+						<fieldset id="selectbaths">
+							<legend>Number of Bathrooms</legend>
+							<input type="radio" id="1bath" name="baths" value="1"> <label for="1bath">1 Bathroom</label>
+							<input type="radio" id="2bath" name="baths" value="2"> <label for="2bath">2 Bathrooms</label>	
+						</fieldset>
+						<fieldset id="selectdate">
+							<legend>Move-in Date</legend>
+							<input type="text" id="movedate">
+						</fieldset>
+						<fieldset id="searchsubmit">
+							<input type="submit" id="search" name="search" value="Search">
+						</fieldset>
+					</form>
 				</div>
 			</div>
 		</section>
