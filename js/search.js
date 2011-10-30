@@ -23,3 +23,16 @@ var regions = [
 	"Seattle",
 	"San Francisco",
 	"Sacramento"];
+
+var regions2 = [
+	["Denver", [
+		"Centennial",
+		"Greenwood Village",
+		"Highlands Ranch",
+		"Littleton",
+		"Thornton",
+		"Westminster"]],
+	["Phoenix", [
+		"Chandler",
+		"Phoenix"]]
+];
