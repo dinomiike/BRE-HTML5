@@ -1,4 +1,4 @@
-var regions = {
+/*var regions = {
 	"Arizona": {
 		"Phoenix Area": [
 			{
@@ -94,7 +94,7 @@ var regions2 = {
 	]
 };
 
-/*var regions2 = [
+var regions2 = [
 	["Denver", [
 		"Centennial",
 		"Greenwood Village",
@@ -105,7 +105,7 @@ var regions2 = {
 	["Phoenix", [
 		"Chandler",
 		"Phoenix"]]
-];*/
+];
 
 // Regions Object: State > Area > City > Property
 
@@ -201,3 +201,118 @@ var regions3 = {
 		}
 	]
 };
+
+
+var regions = {
+	"California": [ {
+		"areas": "Inland Empire"
+		}
+	],
+	"Arizona": [ { 
+		"areas": "Chandler"
+		}
+	],
+	"Washington": [ {
+		"areas": "Seattle"
+		}
+	]
+};
+
+var regions = {
+	"California": [ {
+		"areas": "Inland Empire"
+		}
+	],
+	"California": [ { 
+		"areas": "Chandler"
+		}
+	],
+	"California": [ {
+		"areas": "Seattle"
+		}
+	]
+};
+
+//========================================
+function logArrayElements(element, index, array) {
+	if 
+	console.log("a[" + index + "] = " + element);
+}
+//========================================
+
+{
+	"regions": [
+		{
+			"states": [
+				{
+					"name": "Arizona"
+				},
+				{
+					"name": "California"
+				},
+				{
+					"name": "Denver"
+				},
+				{
+					"name": "Washington"
+				}
+			]
+		}
+	]
+}
+
+
+
+{
+	"states": [
+		{
+			"name": "Arizona"
+		},
+		{
+			"name": "California"
+		},
+		{
+			"name": "Denver"
+		},
+		{
+			"name": "Washington"
+		}
+	]
+}*/
+
+function getName(state) {
+	console.log(state.name);
+	var temp = document.createElement("h1");
+	var maindiv = document.getElementById("mainsearch");
+
+	temp.appendChild(document.createTextNode(state.name));
+
+	//maindiv.appendChild(temp);
+}
+
+function showLocationGrid() {
+	// Object containing the regional data
+	var data = {
+		"states": [
+			{
+				"name": "Arizona"
+			},
+			{
+				"name": "California"
+			},
+			{
+				"name": "Denver"
+			},
+			{
+				"name": "Washington"
+			}
+		]
+	};
+
+	data.states.forEach(getName);
+
+	/*var element = document.createElement("h1");
+	element.appendChild(document.createTextNode("Some state");*/
+}
+
+showLocationGrid();

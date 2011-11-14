@@ -1,0 +1,31 @@
+var california = region.state = "California"
+
+region.areas[]
+	"Inland Empire"
+	"Los Angeles County"
+	"Orange County"
+	"San Francisco Bay Area"
+	"Sacramento Area"
+	"San Diego Area"
+
+region.areas
+
+var california.areas[]
+	"Inland Empire"
+	"Los Angeles County"
+	"Orange County"
+	"San Francisco Bay Area"
+	"Sacramento Area"
+	"San Diego Area"
+
+state => area => city => property
+
+California => area: Inland Empire => city: Chino => property: Enclave at Town Square
+California => area: Inland Empire => city: Chino Hills => property: The Heights
+California => area: Inland Empire => city: Chino Hills => property: The Summit
+California => area: Orange County => city: Anaheim => .areas.foreach() => "Inland Empire", "Los Angeles County", "Orange County", "San Francisco Bay Area", "Sacramento Area", "San Diego Area"
+California.areas["Inland Empire"].cities.foreach() => "Chino", "Chino Hills", "Anaheim"
+California.areas["Inland Empire"].cities["Chino Hills"].properties.foreach() => "The Heights", "The Summit"
+property: Park Viridian
+
+California
