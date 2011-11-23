@@ -287,7 +287,7 @@ function getName(state) {
 
 	temp.appendChild(document.createTextNode(state.name));
 
-	//maindiv.appendChild(temp);
+	maindiv.appendChild(temp);
 }
 
 function showLocationGrid() {
@@ -311,8 +311,10 @@ function showLocationGrid() {
 
 	data.states.forEach(getName);
 
-	/*var element = document.createElement("h1");
-	element.appendChild(document.createTextNode("Some state");*/
+	var element = document.createElement("h1");
+	element.appendChild(document.createTextNode("Some state"));
 }
 
+window.onload=function() {
 showLocationGrid();
+};
