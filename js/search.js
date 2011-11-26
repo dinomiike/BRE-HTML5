@@ -1,293 +1,26 @@
-/*var regions = {
-	"Arizona": {
-		"Phoenix Area": [
-			{
-				"city": "Chandler"
-			},
-			{
-				"city": "Phoenix"
-			}
-		]
-	},
-	"California": {
-		"Inland Empire": {
-			"Chino": {},
-			"Chino Hills": {},
-			"Colton": {}
-		}
-	},
-	"Denver": {
+function createAreaElement(area) {
+	console.log(area.name);
+	var areaTemp = document.createElement("a");
+	var maindiv = document.getElementById("areaSelector");
+	var link = document.createAttribute("href");
+	link.nodeValue = "/search/";
 
-	},
-	"Washington": {
+	areaTemp.appendChild(document.createTextNode(area.name));
 
-	}
-};
+	maindiv.appendChild(areaTemp);
 
-var regions2 = {
-	"locations": [ 
-		{
-			"Arizona": [
-				{
-					"Phoenix Area": [
-						{
-							"city": "Chandler"
-						},
-						{
-							"city": "Phoenix"
-						}
-					]
-				}
-			]
-		},
-		{
-			"California": [
-				{
-					"Inland Empire": [
-						{
-							"city": "Chino"
-						},
-						{
-							"city": "Chino Hills"
-						},
-						{
-							"city": "Colton"
-						},
-						{
-							"city": "Diamond Bar"
-						},
-						{
-							"city": "Moreno Valley"
-						},
-						{
-							"city": "Riverside"
-						}
-					]
-				},
-				{
-					"Los Angeles County": [
-						{
-							"city": "Los Angeles"
-						},
-						{
-							"city": "Marina del Rey"
-						},
-						{
-							"city": "Northridge"
-						},
-						{
-							"city": "Pasadena"
-						},
-						{
-							"city": "Santa Clarita"
-						},
-						{
-							"city": "Valencia"
-						},
-						{
-							"city": "Wilmington"
-						}
-					]
-				}
-			]
-		}
-	]
-};
-
-var regions2 = [
-	["Denver", [
-		"Centennial",
-		"Greenwood Village",
-		"Highlands Ranch",
-		"Littleton",
-		"Thornton",
-		"Westminster"]],
-	["Phoenix", [
-		"Chandler",
-		"Phoenix"]]
-];
-
-// Regions Object: State > Area > City > Property
-
-var regions3 = {
-	"states": [
-		{
-			"Arizona": [
-				{
-					"Phoenix Area": [
-						{
-							"Chandler": [
-								{
-									"property": "Pinnacle Queen Creek"
-								},
-								{
-									"property": "Pinnacle Terrace"
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"California": [
-				{
-					"Inland Empire": [
-						{
-							"Chino": [
-								{
-									"property": "Enclave at Town Square"
-								}
-							]
-						},
-						{
-							"Chino Hills": [
-								{
-									"property": "The Heights"
-								},
-								{
-									"property": "The Summit"
-								}
-							]
-						},
-						{
-							"Colton": [
-								{
-									"property": "Windrush Village"
-								}
-							]
-						},
-						{
-							"Diamond Bar": [
-								{
-									"property": "Emerald Pointe"
-								}
-							]
-						},
-						{
-							"Moreno Valley": [
-								{
-									"property": "Galleria at Towngate"
-								}
-							]
-						},
-						{
-							"Riverside": [
-								{
-									"property": "Mission Grove Park"
-								}
-							]
-						}
-					]
-				},
-				{
-					"Los Angeles County": [
-						{
-							"Los Angeles": [
-								{
-									"property": "5600 Wilshire"
-								}
-							]
-						}
-					]
-				}
-			]
-		},
-		{
-			"state": "Denver"
-		},
-		{
-			"state": "Washington"
-		}
-	]
-};
-
-
-var regions = {
-	"California": [ {
-		"areas": "Inland Empire"
-		}
-	],
-	"Arizona": [ { 
-		"areas": "Chandler"
-		}
-	],
-	"Washington": [ {
-		"areas": "Seattle"
-		}
-	]
-};
-
-var regions = {
-	"California": [ {
-		"areas": "Inland Empire"
-		}
-	],
-	"California": [ { 
-		"areas": "Chandler"
-		}
-	],
-	"California": [ {
-		"areas": "Seattle"
-		}
-	]
-};
-
-//========================================
-function logArrayElements(element, index, array) {
-	if 
-	console.log("a[" + index + "] = " + element);
-}
-//========================================
-
-{
-	"regions": [
-		{
-			"states": [
-				{
-					"name": "Arizona"
-				},
-				{
-					"name": "California"
-				},
-				{
-					"name": "Denver"
-				},
-				{
-					"name": "Washington"
-				}
-			]
-		}
-	]
+	areaTemp.setAttribute(link);
 }
 
-
-
-{
-	"states": [
-		{
-			"name": "Arizona"
-		},
-		{
-			"name": "California"
-		},
-		{
-			"name": "Denver"
-		},
-		{
-			"name": "Washington"
-		}
-	]
-}*/
-
-function getName(state) {
+function createStateElement(state) {
 	console.log(state.name);
-	var temp = document.createElement("h1");
-	var maindiv = document.getElementById("mainsearch");
+	var temp = document.createElement("h2");
+	var maindiv = document.getElementById("areaSelector");
 
 	temp.appendChild(document.createTextNode(state.name));
 
 	maindiv.appendChild(temp);
+	state.areas.forEach(createAreaElement);
 }
 
 function showLocationGrid() {
@@ -295,24 +28,59 @@ function showLocationGrid() {
 	var data = {
 		"states": [
 			{
-				"name": "Arizona"
+				"name": "Arizona",
+				"areas": [
+					{
+						"name": "Chandler"
+					},
+					{
+						"name": "Phoenix"
+					}
+				]
 			},
 			{
-				"name": "California"
+				"name": "California",
+				"areas": [
+					{
+						"name": "Inland Empire"
+					},
+					{
+						"name": "Los Angeles County"
+					},
+					{
+						"name": "Orange County"
+					},
+					{
+						"name": "San Francisco Bay Area"
+					},
+					{
+						"name": "Sacramento Area"
+					},
+					{
+						"name": "San Diego Area"
+					}
+				]
 			},
 			{
-				"name": "Denver"
+				"name": "Colorado",
+				"areas": [
+					{
+						"name": "Denver Area"
+					}
+				]
 			},
 			{
-				"name": "Washington"
+				"name": "Washington",
+				"areas": [
+					{
+						"name": "Seattle Area"
+					}
+				]
 			}
 		]
 	};
 
-	data.states.forEach(getName);
-
-	var element = document.createElement("h1");
-	element.appendChild(document.createTextNode("Some state"));
+	data.states.forEach(createStateElement);
 }
 
 window.onload=function() {
