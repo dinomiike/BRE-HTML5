@@ -93,6 +93,13 @@ div#mainsearch {
 	background: #fff;
 }
 
+div#areaSelector {
+	margin: 0 auto;
+	width: 700px;
+	column-count: 2;
+	-moz-column-count: 2;
+	-webkit-column-width: 200px;
+}
 
 footer {
 	width: 960px;
