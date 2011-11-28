@@ -101,6 +101,10 @@ div#areaSelector {
 	-webkit-column-width: 200px;
 }
 
+div#citySelector {
+	visibility: hidden;
+}
+
 footer {
 	width: 960px;
 	height: 90px;

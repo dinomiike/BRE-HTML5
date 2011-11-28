@@ -2,15 +2,26 @@ function test(areaName) {
 	confirm("You have selected "+areaName);
 }
 
+function createCityElement(city) {
+	console.log("--"+city.name);
+}
+
 function createAreaElement(area) {
-	console.log(area.name);
+	console.log("-"+area.name);
 	var areaTemp = document.createElement("div");
 	var maindiv = document.getElementById("areaSelector");
-	areaTemp.setAttribute("onclick", "test('"+area.name+"')");
+	areaTemp.setAttribute("onclick", "createCityElement('"+area.name+"')");
 
 	areaTemp.appendChild(document.createTextNode(area.name));
 
 	maindiv.appendChild(areaTemp);
+	/*
+	Uncomment this to invoke forEach on cities witin an area.
+	The condition is necessary because all area objects don't contain city properties
+	*/
+	if (typeof area.cities !== "undefined") {
+		area.cities.forEach(createCityElement);
+	}
 }
 
 function createStateElement(state) {
