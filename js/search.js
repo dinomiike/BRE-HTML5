@@ -1,15 +1,16 @@
+function test(areaName) {
+	confirm("You have selected "+areaName);
+}
+
 function createAreaElement(area) {
 	console.log(area.name);
-	var areaTemp = document.createElement("a");
+	var areaTemp = document.createElement("div");
 	var maindiv = document.getElementById("areaSelector");
-	var link = document.createAttribute("href");
-	link.nodeValue = "/search/";
+	areaTemp.setAttribute("onclick", "test('"+area.name+"')");
 
 	areaTemp.appendChild(document.createTextNode(area.name));
 
 	maindiv.appendChild(areaTemp);
-
-	areaTemp.setAttribute(link);
 }
 
 function createStateElement(state) {
@@ -42,22 +43,157 @@ function showLocationGrid() {
 				"name": "California",
 				"areas": [
 					{
-						"name": "Inland Empire"
+						"name": "Inland Empire",
+						"cities": [
+							{
+								"name": "Chino"
+							},
+							{
+								"name": "Chino Hills"
+							},
+							{
+								"name": "Diamond Bar"
+							},
+							{
+								"name": "Riverside"
+							}
+						]
 					},
 					{
-						"name": "Los Angeles County"
+						"name": "Los Angeles County",
+						"cities": [
+							{
+								"name": "Los Angeles"
+							},
+							{
+								"name": "Marina del Rey"
+							},
+							{
+								"name": "Northridge"
+							},
+							{
+								"name": "Pasadena"
+							},
+							{
+								"name": "Santa Clarita"
+							},
+							{
+								"name": "Valencia"
+							},
+							{
+								"name": "Wilmington"
+							}
+						]
 					},
 					{
-						"name": "Orange County"
+						"name": "Orange County",
+						"cities": [
+							{
+								"name": "Anaheim"
+							},
+							{
+								"name": "Costa Mesa"
+							},
+							{
+								"name": "Fountain Valley"
+							},
+							{
+								"name": "Fullerton"
+							},
+							{
+								"name": "La Habra"
+							},
+							{
+								"name": "Laguna Nigel"
+							},
+							{
+								"name": "Orange"
+							},
+							{
+								"name": "Rancho Santa Margarita"
+							},
+							{
+								"name": "San Clemente"
+							},
+							{
+								"name": "Santa Ana"
+							},
+							{
+								"name": "South Coast Metro"
+							}
+						]
 					},
 					{
-						"name": "San Francisco Bay Area"
+						"name": "San Francisco Bay Area",
+						"cities": [
+							{
+								"name": "Emeryville"
+							},
+							{
+								"name": "Foster City"
+							},
+							{
+								"name": "Fremont"
+							},
+							{
+								"name": "Hayward"
+							},
+							{
+								"name": "Lafayette"
+							},
+							{
+								"name": "Menlo Park"
+							},
+							{
+								"name": "Oakland"
+							},
+							{
+								"name": "San Jose"
+							},
+							{
+								"name": "San Mateo"
+							},
+							{
+								"name": "San Rafael"
+							},
+							{
+								"name": "San Ramon"
+							},
+							{
+								"name": "Santa Clara"
+							},
+							{
+								"name": "Union City"
+							}
+						]
 					},
 					{
-						"name": "Sacramento Area"
+						"name": "Sacramento Area",
+						"cities": [
+							{
+								"name": "Roseville"
+							},
+							{
+								"name": "Sacramento"
+							}
+						]
 					},
 					{
-						"name": "San Diego Area"
+						"name": "San Diego Area",
+						"cities": [
+							{
+								"name": "Chula Vista"
+							},
+							{
+								"name": "El Cajon"
+							},
+							{
+								"name": "San Diego"
+							},
+							{
+								"name": "Spring Valley"
+							}
+						]
 					}
 				]
 			},
@@ -65,7 +201,27 @@ function showLocationGrid() {
 				"name": "Colorado",
 				"areas": [
 					{
-						"name": "Denver Area"
+						"name": "Denver Area",
+						"cities": [
+							{
+								"name": "Centennial"
+							},
+							{
+								"name": "Greenwood Village"
+							},
+							{
+								"name": "Highlands Ranch"
+							},
+							{
+								"name": "Littleton"
+							},
+							{
+								"name": "Thornton"
+							},
+							{
+								"name": "Westminster"
+							}
+						]
 					}
 				]
 			},
@@ -73,7 +229,30 @@ function showLocationGrid() {
 				"name": "Washington",
 				"areas": [
 					{
-						"name": "Seattle Area"
+						"name": "Seattle Area",
+						"cities": [
+							{
+								"name": "Bellevue"
+							},
+							{
+								"name": "Bothell"
+							},
+							{
+								"name": "Mill Creek"
+							},
+							{
+								"name": "Redmond"
+							},
+							{
+								"name": "Renton"
+							},
+							{
+								"name": "Seattle"
+							},
+							{
+								"name": "Shoreline"
+							}
+						]
 					}
 				]
 			}
