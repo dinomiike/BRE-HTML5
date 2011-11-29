@@ -105,6 +105,12 @@ div#citySelector {
 	visibility: hidden;
 }
 
+div.cityOption {
+	cursor: hand;
+	color: #549637;
+	padding-left: 5px;
+}
+
 footer {
 	width: 960px;
 	height: 90px;

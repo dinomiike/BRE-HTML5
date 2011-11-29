@@ -4,6 +4,13 @@ function test(areaName) {
 
 function createCityElement(city) {
 	console.log("--"+city.name);
+	var cityTemp = document.createElement("div");
+	var maindiv = document.getElementById("areaSelector");
+	cityTemp.setAttribute("class", "cityOption");
+
+	cityTemp.appendChild(document.createTextNode(city.name));
+
+	maindiv.appendChild(cityTemp);
 }
 
 function createAreaElement(area) {
