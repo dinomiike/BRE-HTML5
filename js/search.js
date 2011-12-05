@@ -2,6 +2,11 @@ function test(areaName) {
 	confirm("You have selected "+areaName);
 }
 
+function createPropertyElement(area) {
+	var selection = data;
+	alert(data);
+}
+
 function createCityElement(city) {
 	console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
@@ -17,7 +22,7 @@ function createAreaElement(area) {
 	console.log("-"+area.name);
 	var areaTemp = document.createElement("div");
 	var maindiv = document.getElementById("areaSelector");
-	areaTemp.setAttribute("onclick", "createCityElement('"+area.name+"')");
+	areaTemp.setAttribute("onclick", "createPropertyElement('"+area.name+"')");
 
 	areaTemp.appendChild(document.createTextNode(area.name));
 
@@ -25,10 +30,10 @@ function createAreaElement(area) {
 	/*
 	Uncomment this to invoke forEach on cities witin an area.
 	The condition is necessary because all area objects don't contain city properties
-	*/
 	if (typeof area.cities !== "undefined") {
 		area.cities.forEach(createCityElement);
 	}
+	*/
 }
 
 function createStateElement(state) {
@@ -50,10 +55,209 @@ function showLocationGrid() {
 				"name": "Arizona",
 				"areas": [
 					{
-						"name": "Chandler"
+						"name": "Chandler",
+						"properties": [
+							{
+								"name": "Pinnacle Queen Creek",
+								"streetAddress": "800 West Queen Creek Road",
+								"city": "Chandler",
+								"state": "AZ",
+								"zip": "85248",
+								"phoneNumber": "866.553.0652",
+								"rentMin": "760",
+								"rentMax": "1220",
+								"bedsMin": "1",
+								"bedsMax": "3",
+								"bathsMin": "1",
+								"bathsMax": "2",
+								"amenities": [
+									{
+										"name": "Fitness center"
+									},
+									{
+										"name": "Controlled access"
+									},
+									{
+										"name": "Pet friendly"
+									},
+									{
+										"name": "Pool"
+									},
+									{
+										"name": "Covered parking"
+									},
+									{
+										"name": "Playground"
+									}
+								]
+							},
+							{
+								"name": "Pinnacle Terrace",
+								"streetAddress": "801 North Federal Street",
+								"city": "Chandler",
+								"state": "AZ",
+								"zip": "85226",
+								"phoneNumber": "866.551.7640",
+								"rentMin": "745",
+								"rentMax": "1350",
+								"bedsMin": "1",
+								"bedsMax": "3",
+								"bathsMin": "1",
+								"bathsMax": "2",
+								"amenities": [
+									{
+										"name": "Controlled access"
+									},
+									{
+										"name": "Fitness center"
+									},
+									{
+										"name": "Pet friendly"
+									},
+									{
+										"name": "Covered parking"
+									},
+									{
+										"name": "Pool"
+									}
+								]
+							}
+						]
 					},
 					{
-						"name": "Phoenix"
+						"name": "Phoenix",
+						"properties": [
+							{
+								"name": "Pinnacle at South Mountain",
+								"streetAddress": "5151 East Guadalupe Road",
+								"city": "Phoenix",
+								"state": "AZ",
+								"zip": "85044",
+								"phoneNumber": "866.926.9783",
+								"rentMin": "685",
+								"rentMax": "1335",
+								"bedsMin": "1",
+								"bedsMax": "3",
+								"bathsMin": "1",
+								"bathsMax": "2",
+								"amenities": [
+									{
+										"name": "Fitness center"
+									},
+									{
+										"name": "Controlled access"
+									},
+									{
+										"name": "Pool"
+									},
+									{
+										"name": "Pet friendly"
+									},
+									{
+										"name": "Playground"
+									},
+									{
+										"name": "Covered parking"
+									}
+								]
+							},
+							{
+								"name": "Pinnacle Towne Center",
+								"streetAddress": "1601 East Highland Avenue",
+								"city": "Phoenix",
+								"state": "AZ",
+								"zip": "85016",
+								"phoneNumber": "866.551.0671",
+								"rentMin": "800",
+								"rentMax": "1530",
+								"bedsMin": "1",
+								"bedsMax": "3",
+								"bathsMin": "1",
+								"bathsMax": "2",
+								"amenities": [
+									{
+										"name": "Fitness center"
+									},
+									{
+										"name": "Controlled access"
+									},
+									{
+										"name": "Covered parking"
+									},
+									{
+										"name": "Pet friendly"
+									},
+									{
+										"name": "Pool"
+									}
+								]
+							},
+							{
+								"name": "Pinnacle at Union Hills",
+								"streetAddress": "4750 East Union Hills",
+								"city": "Phoenix",
+								"state": "AZ",
+								"zip": "85050",
+								"phoneNumber": "866.666.4209",
+								"rentMin": "755",
+								"rentMax": "1275",
+								"bedsMin": "1",
+								"bedsMax": "3",
+								"bathsMin": "1",
+								"bathsMax": "2",
+								"amenities": [
+									{
+										"name": "Controlled access"
+									},
+									{
+										"name": "Fitness center"
+									},
+									{
+										"name": "Pet friendly"
+									},
+									{
+										"name": "Playground"
+									},
+									{
+										"name": "Pool"
+									},
+									{
+										"name": "Covered parking"
+									}
+								]
+							},
+							{
+								"name": "Arcadia Cove",
+								"streetAddress": "2252 North 44th Street",
+								"city": "Phoenix",
+								"state": "AZ",
+								"zip": "85008",
+								"phoneNumber": "866.797.6001",
+								"rentMin": "610",
+								"rentMax": "1050",
+								"bedsMin": "1",
+								"bedsMax": "3",
+								"bathsMin": "1",
+								"bathsMax": "2",
+								"amenities": [
+									{
+										"name": "Fitness center"
+									},
+									{
+										"name": "Controlled access"
+									},
+									{
+										"name": "Pet friendly"
+									},
+									{
+										"name": "Covered parking"
+									},
+									{
+										"name": "Pool"
+									}
+								]
+							}
+						]
 					}
 				]
 			},
