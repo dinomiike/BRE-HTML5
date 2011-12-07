@@ -10,12 +10,17 @@ function createPropertyElement(area) {
 function createCityElement(city) {
 	console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
-	var maindiv = document.getElementById("areaSelector");
+	var cityContainer = document.createElement("div");
+	cityContainer.setAttribute("class", "someArea");
+	//var maindiv = document.getElementById("areaSelector");
+	var maindiv = document.getElementById("citySelector");
 	cityTemp.setAttribute("class", "cityOption");
 
 	cityTemp.appendChild(document.createTextNode(city.name));
 
-	maindiv.appendChild(cityTemp);
+	cityContainer.appendChild(cityTemp);
+
+	maindiv.appendChild(cityContainer);
 }
 
 function createAreaElement(area) {
@@ -30,10 +35,13 @@ function createAreaElement(area) {
 	/*
 	Uncomment this to invoke forEach on cities witin an area.
 	The condition is necessary because all area objects don't contain city properties
+	*/
 	if (typeof area.cities !== "undefined") {
+		// You need to create the city container here NAMED by the area
+		// However, you need to pass that container to createCityElement to appendChild to it
+		// How to pass an additional dynamic parameter in forEach?
 		area.cities.forEach(createCityElement);
 	}
-	*/
 }
 
 function createStateElement(state) {
