@@ -10,23 +10,31 @@ function createPropertyElement(area) {
 function createCityElement(city) {
 	console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
-	var cityContainer = document.createElement("div");
-	cityContainer.setAttribute("class", "someArea");
+	//var cityContainer = document.createElement("div");
+	//cityContainer.setAttribute("class", "someArea");
 	//var maindiv = document.getElementById("areaSelector");
-	var maindiv = document.getElementById("citySelector");
+	//var maindiv = document.getElementById("citySelector");
 	cityTemp.setAttribute("class", "cityOption");
 
 	cityTemp.appendChild(document.createTextNode(city.name));
 
-	cityContainer.appendChild(cityTemp);
+	//cityContainer.appendChild(cityTemp);
+	this.appendChild(cityTemp);
 
-	maindiv.appendChild(cityContainer);
+	//maindiv.appendChild(cityContainer);
 }
 
 function createAreaElement(area) {
 	console.log("-"+area.name);
 	var areaTemp = document.createElement("div");
 	var maindiv = document.getElementById("areaSelector");
+
+	var cityContainer = document.createElement("div");
+	var cityDiv = document.getElementById("citySelector");
+	cityContainer.setAttribute("id", area.name);
+
+	cityDiv.appendChild(cityContainer);
+
 	areaTemp.setAttribute("onclick", "createPropertyElement('"+area.name+"')");
 
 	areaTemp.appendChild(document.createTextNode(area.name));
@@ -40,7 +48,7 @@ function createAreaElement(area) {
 		// You need to create the city container here NAMED by the area
 		// However, you need to pass that container to createCityElement to appendChild to it
 		// How to pass an additional dynamic parameter in forEach?
-		area.cities.forEach(createCityElement);
+		area.cities.forEach(createCityElement, cityContainer);
 	}
 }
 
