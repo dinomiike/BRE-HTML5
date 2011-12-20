@@ -103,6 +103,7 @@ div#areaSelector {
 
 div#citySelector {
 	visibility: hidden;
+	/*display: none;*/
 }
 
 div.cityOption {

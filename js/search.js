@@ -1,19 +1,31 @@
+// Global object for city toggle list
+function controlArea(area) {
+	this.camelCaseName = area;
+}
+var setArea = new controlArea();
+
 function test(areaName) {
-	confirm("You have selected "+areaName);
+	confirm("You have selected "+areaName.camelCase());
 }
 
 function createPropertyElement(area) {
-	var selection = data;
-	alert(data);
+	var selection = document.getElementById(area);
+
+	// A city has either been set or needs to be set now, so let's set it
+	//setArea.camelCaseName = area;
+
+	if (typeof setArea.camelCaseName !== "undefined") {
+		// Hide the existing area
+		document.getElementById(setArea.camelCaseName).style.visibility = "hidden";
+	}
+	selection.style.visibility = "visible";
+	// A city has either been set or needs to be set now, so let's set it
+	setArea.camelCaseName = area;
 }
 
 function createCityElement(city) {
 	console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
-	//var cityContainer = document.createElement("div");
-	//cityContainer.setAttribute("class", "someArea");
-	//var maindiv = document.getElementById("areaSelector");
-	//var maindiv = document.getElementById("citySelector");
 	cityTemp.setAttribute("class", "cityOption");
 
 	cityTemp.appendChild(document.createTextNode(city.name));
@@ -29,13 +41,12 @@ function createAreaElement(area) {
 	var areaTemp = document.createElement("div");
 	var maindiv = document.getElementById("areaSelector");
 
-	var cityContainer = document.createElement("div");
+	/*var cityContainer = document.createElement("div");
 	var cityDiv = document.getElementById("citySelector");
-	cityContainer.setAttribute("id", area.name);
+	cityContainer.setAttribute("id", area.name.camelCase());
+	cityDiv.appendChild(cityContainer);*/
 
-	cityDiv.appendChild(cityContainer);
-
-	areaTemp.setAttribute("onclick", "createPropertyElement('"+area.name+"')");
+	areaTemp.setAttribute("onclick", "createPropertyElement('"+area.name.camelCase()+"')");
 
 	areaTemp.appendChild(document.createTextNode(area.name));
 
@@ -45,6 +56,10 @@ function createAreaElement(area) {
 	The condition is necessary because all area objects don't contain city properties
 	*/
 	if (typeof area.cities !== "undefined") {
+		var cityContainer = document.createElement("div");
+		var cityDiv = document.getElementById("citySelector");
+		cityContainer.setAttribute("id", area.name.camelCase());
+		cityDiv.appendChild(cityContainer);
 		// You need to create the city container here NAMED by the area
 		// However, you need to pass that container to createCityElement to appendChild to it
 		// How to pass an additional dynamic parameter in forEach?
