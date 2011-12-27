@@ -14,72 +14,118 @@ function test(areaName) {
 	confirm("You have selected "+areaName.camelCase());
 }
 
-function createPropertyElement(area) {
-	// Make the city container and property container divs visible
-	document.getElementById("citySelector").style.display = "inline-block";
-	document.getElementById("propertySelector").style.display = "inline-block";
-
-	var selection = document.getElementById(area);
-
-	// A city has either been set or needs to be set now, so let's set it
-	//setArea.camelCaseName = area;
-
+/*
+	May not need to componentize this function, but keep the outline of it here for ideas
+	* * *
+function toggleCityContainer(area) {
 	if (typeof setArea.camelCaseName !== "undefined") {
-		// Hide the existing area
+		// An area was previously selected, we need to hide it now
 		document.getElementById(setArea.camelCaseName).style.display = "none";
 	}
-	selection.style.display = "inline-block";
-	// A city has either been set or needs to be set now, so let's set it
+	
+	// Now let's set the area based on the current click
 	setArea.camelCaseName = area;
+	// And make it's container visible
+	selection.style.display = "inline-block";
+}
+*/
+
+function displayPropertyList(property) {
+	console.log("Property: "+property.name);
+}
+
+function createPropertyElement(area) {
+	var selection = document.getElementById(area);
+
+	// 1. If an area has been set before, hide it
+	if (typeof setArea.camelCaseName !== "undefined") {
+		// An area was previously selected, we need to hide it now
+		var previousSelection = document.getElementById(setArea.camelCaseName);
+
+		// Did the last selection have a list of cities? If so we need to hide it. If not, hide the div containing cities
+		if (previousSelection !== null) {
+			document.getElementById(setArea.camelCaseName).style.display = "none";
+		} else {
+			document.getElementById("citySelector").style.display = "none";
+		}
+	}
+
+	// 2. Find out if the current clicked area has cities to show
+	// If this area has cities to expand, allow the container to appear: it will return null if not found
+	if (selection !== null) {
+		// Make the city container container div visible
+		document.getElementById("citySelector").style.display = "inline-block";
+
+		selection.style.display = "inline-block";
+	} else {
+		//console.log("Area with no cities, show all properties");
+		document.getElementById("citySelector").style.display = "none";
+	}
+
+	// Make the property div visible
+	document.getElementById("propertySelector").style.display = "inline-block";
+	//toggleCityContainer(area);
+
+	// Now let's set the area based on the current click
+	setArea.camelCaseName = area;
+
+	// Currently fixed to show all from Chandler, AZ
+	data.states[0].areas[0].properties.forEach(quickPrint);
+}
+
+function quickPrint(property) {
+	console.log("property: "+property.name);
 }
 
 function createCityElement(city) {
-	console.log("--"+city.name);
+	//console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
 	cityTemp.setAttribute("class", "cityOption");
 
 	cityTemp.appendChild(document.createTextNode(city.name));
 
-	//cityContainer.appendChild(cityTemp);
 	this.appendChild(cityTemp);
-
-	//maindiv.appendChild(cityContainer);
 }
 
 function createAreaElement(area) {
-	console.log("-"+area.name);
+	//console.log("-"+area.name);
 	var areaTemp = document.createElement("div");
 	var maindiv = document.getElementById("areaSelector");
-
-	/*var cityContainer = document.createElement("div");
-	var cityDiv = document.getElementById("citySelector");
-	cityContainer.setAttribute("id", area.name.camelCase());
-	cityDiv.appendChild(cityContainer);*/
 
 	areaTemp.setAttribute("onclick", "createPropertyElement('"+area.name.camelCase()+"')");
 
 	areaTemp.appendChild(document.createTextNode(area.name));
 
 	maindiv.appendChild(areaTemp);
-	/*
-	Uncomment this to invoke forEach on cities witin an area.
-	The condition is necessary because all area objects don't contain city properties
-	*/
 	if (typeof area.cities !== "undefined") {
 		var cityContainer = document.createElement("div");
 		var cityDiv = document.getElementById("citySelector");
 		cityContainer.setAttribute("id", area.name.camelCase());
 		cityContainer.setAttribute("class", "cityContainer");
 		cityDiv.appendChild(cityContainer);
-		// You need to create the city container here NAMED by the area
-		// However, you need to pass that container to createCityElement to appendChild to it
-		// How to pass an additional dynamic parameter in forEach?
+		// Loop through all cities in this area (if any), passing along the cityContainer element
 		area.cities.forEach(createCityElement, cityContainer);
+
+		/*
+		if (typeof area.properties !== "undefined") {
+			// Loop through all properties in this area and stuff them into the existing propertyList div
+			area.properties.forEach(displayPropertyList);
+		}
+		*/
 	}
+	/*
+	***************************
+		This needs to be moved to the createPropertyElement function.
+		Find a way to loop through all cities given the name of an area
+	***************************
+	if (typeof area.properties !== "undefined") {
+		// Loop through all properties in this area and stuff them into the existing propertyList div
+		area.properties.forEach(displayPropertyList);
+	}*/
 }
 
 function createStateElement(state) {
-	console.log(state.name);
+	//console.log(state.name);
 	var temp = document.createElement("h2");
 	var maindiv = document.getElementById("areaSelector");
 
@@ -91,7 +137,6 @@ function createStateElement(state) {
 
 function showLocationGrid() {
 	// The variable data contains all the regional data
-
 	data.states.forEach(createStateElement);
 }
 
