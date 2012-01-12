@@ -73,6 +73,13 @@ function createPropertyElement(area) {
 	data.states[0].areas[0].properties.forEach(quickPrint);
 }
 
+function createPropertyElement2(property) {
+	var propertyTemp = document.createElement("div");
+	propertyTemp.setAttribute("id", property.name.camelCase());
+	propertyTemp.appendChild(document.createTextNode(property.name));
+	this.appendChild(propertyTemp);
+}
+
 function quickPrint(property) {
 	console.log("property: "+property.name);
 }
@@ -97,6 +104,7 @@ function createAreaElement(area) {
 	areaTemp.appendChild(document.createTextNode(area.name));
 
 	maindiv.appendChild(areaTemp);
+	// If the area has cities, let's build a list of them (for filtering)
 	if (typeof area.cities !== "undefined") {
 		var cityContainer = document.createElement("div");
 		var cityDiv = document.getElementById("citySelector");
@@ -112,6 +120,17 @@ function createAreaElement(area) {
 			area.properties.forEach(displayPropertyList);
 		}
 		*/
+	}
+
+	// If the area has properties, let's build a list of them
+	if (typeof area.properties !== "undefined") {
+		// Create a container div for this property and give it an ID
+		var propertyContainer = document.createElement("div");
+		var propertyDiv = document.getElementById("propertyList");
+		propertyContainer.setAttribute("id", "area"+area.name.camelCase());
+		propertyDiv.appendChild(propertyContainer);
+
+		area.properties.forEach(createPropertyElement2, propertyContainer);
 	}
 	/*
 	***************************

@@ -101,6 +101,10 @@ div#areaSelector {
 	-webkit-column-width: 200px;
 }
 
+div#areaSelector div {
+	cursor: pointer;
+}
+
 div#selectionResults {
 	margin: 0 auto;
 	width: 800px;
@@ -116,6 +120,7 @@ div#citySelector {
 
 div.cityContainer {
 	display: none;
+	cursor: pointer;
 }
 
 div.cityOption {
