@@ -140,6 +140,10 @@ div#propertySelector {
 	float: left;*/
 }
 
+div.areaList {
+	display: none;
+}
+
 footer {
 	width: 960px;
 	height: 90px;

@@ -48,14 +48,17 @@ function createPropertyElement(area) {
 		} else {
 			document.getElementById("citySelector").style.display = "none";
 		}
+		document.getElementById("area"+setArea.camelCaseName).style.display = "none";
+		//console.log(document.getElementById("area"+setArea.camelCaseName));
 	}
 
 	// 2. Find out if the current clicked area has cities to show
 	// If this area has cities to expand, allow the container to appear: it will return null if not found
 	if (selection !== null) {
-		// Make the city container container div visible
+		// Make the city container div visible
 		document.getElementById("citySelector").style.display = "inline-block";
 
+		// Now make the list of cities for that area visible
 		selection.style.display = "inline-block";
 	} else {
 		//console.log("Area with no cities, show all properties");
@@ -64,13 +67,14 @@ function createPropertyElement(area) {
 
 	// Make the property div visible
 	document.getElementById("propertySelector").style.display = "inline-block";
+	document.getElementById("area"+area).style.display = "inline-block";
 	//toggleCityContainer(area);
 
 	// Now let's set the area based on the current click
 	setArea.camelCaseName = area;
 
 	// Currently fixed to show all from Chandler, AZ
-	data.states[0].areas[0].properties.forEach(quickPrint);
+	//data.states[0].areas[0].properties.forEach(quickPrint);
 }
 
 function createPropertyElement2(property) {
@@ -128,6 +132,7 @@ function createAreaElement(area) {
 		var propertyContainer = document.createElement("div");
 		var propertyDiv = document.getElementById("propertyList");
 		propertyContainer.setAttribute("id", "area"+area.name.camelCase());
+		propertyContainer.setAttribute("class", "areaList");
 		propertyDiv.appendChild(propertyContainer);
 
 		area.properties.forEach(createPropertyElement2, propertyContainer);
