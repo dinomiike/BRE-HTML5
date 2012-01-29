@@ -80,7 +80,33 @@ function createPropertyElement(area) {
 function createPropertyElement2(property) {
 	var propertyTemp = document.createElement("div");
 	propertyTemp.setAttribute("id", property.name.camelCase());
-	propertyTemp.appendChild(document.createTextNode(property.name));
+	//propertyTemp.appendChild(document.createTextNode(property.name));
+
+	// Create image div
+	var imgBox = document.createElement("div");
+	var imgTmp = document.createElement("img");
+	imgBox.setAttribute("class", "img");
+	imgTmp.setAttribute("src", "");
+	imgBox.appendChild(imgTmp);
+	propertyTemp.appendChild(imgBox);
+
+	// Create Property Info div
+	var infoBox = document.createElement("div");
+	var infoTitle = document.createElement("div");
+	var infoAddress = document.createElement("div");
+	var infoPhone = document.createElement("div");
+	infoBox.setAttribute("class", "info");
+	infoTitle.setAttribute("class", "title");
+	infoTitle.appendChild(document.createTextNode(property.name));
+	infoAddress.setAttribute("class", "address");
+	infoAddress.appendChild(document.createTextNode("Address"));
+	infoPhone.setAttribute("class", "phone");
+	infoPhone.appendChild(document.createTextNode("Phone Number"));
+	infoBox.appendChild(infoTitle);
+	infoBox.appendChild(infoAddress);
+	infoBox.appendChild(infoPhone);
+	propertyTemp.appendChild(infoBox);
+
 	this.appendChild(propertyTemp);
 }
 
