@@ -140,6 +140,11 @@ function createCityElement(city) {
 	cityTemp.appendChild(document.createTextNode(city.name));
 
 	this.appendChild(cityTemp);
+
+	// Now create the property list for all properties in this city
+	/****
+	 * LEFT OFF HERE *
+	 ****/
 }
 
 function createAreaElement(area) {

@@ -93,9 +93,16 @@ div#mainsearch {
 	background: #fff;
 }
 
+div#searchHeader {
+	padding: 20px 0px 0px 20px;
+	font: bold 22px Georgia, Times, "Times New Roman";
+	color: #614D3F;
+}
+
 div#areaSelector {
 	margin: 0 auto;
 	width: 700px;
+	padding: 0px 0px 20px 0px;
 	column-count: 2;
 	-moz-column-count: 2;
 	-webkit-column-width: 200px;
