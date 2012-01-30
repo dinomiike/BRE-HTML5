@@ -7,6 +7,7 @@ var data = {
 						"name": "Chandler",
 						"properties": [
 							{
+								"propertyCode": "phx1154j",
 								"name": "Pinnacle Queen Creek",
 								"streetAddress": "800 West Queen Creek Road",
 								"city": "Chandler",
@@ -41,6 +42,7 @@ var data = {
 								]
 							},
 							{
+								"propertyCode": "phx4024j",
 								"name": "Pinnacle Terrace",
 								"streetAddress": "801 North Federal Street",
 								"city": "Chandler",
@@ -77,6 +79,7 @@ var data = {
 						"name": "Phoenix",
 						"properties": [
 							{
+								"propertyCode": "phx4006",
 								"name": "Pinnacle at South Mountain",
 								"streetAddress": "5151 East Guadalupe Road",
 								"city": "Phoenix",
@@ -111,6 +114,7 @@ var data = {
 								]
 							},
 							{
+								"propertyCode": "phx4023",
 								"name": "Pinnacle Towne Center",
 								"streetAddress": "1601 East Highland Avenue",
 								"city": "Phoenix",
@@ -142,6 +146,7 @@ var data = {
 								]
 							},
 							{
+								"propertyCode": "phx4008j",
 								"name": "Pinnacle at Union Hills",
 								"streetAddress": "4750 East Union Hills",
 								"city": "Phoenix",
@@ -176,6 +181,7 @@ var data = {
 								]
 							},
 							{
+								"propertyCode": "phx1124j",
 								"name": "Arcadia Cove",
 								"streetAddress": "2252 North 44th Street",
 								"city": "Phoenix",

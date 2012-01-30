@@ -134,10 +134,46 @@ div#propertySelector {
 	/*display: inline-block;*/
 	display: none;
 	vertical-align: top;
+	/*width: 550px;*/
 	width: 550px;
 	min-height: 100px;
 	/*position: relative;
 	float: left;*/
+}
+
+div.property {
+	border-style: solid;
+	border-color: #ccc;
+	border-width: 0px 0px 1px 0px;
+	padding: 10px 0px 5px 5px;
+}
+
+.img {
+	display: inline-block;
+	width: 80px;
+}
+
+img.propertyPhoto {
+	width: 72px;
+	height: 72px;
+	background: #ccc;
+}
+
+.info {
+	display: inline-block;
+	width: 250px;
+	vertical-align: top;
+}
+
+.range {
+	display: inline-block;
+	width: 200px;
+	vertical-align: top;
+}
+
+.title {
+	font-weight: bold;
+	color: #549637;
 }
 
 div.areaList {

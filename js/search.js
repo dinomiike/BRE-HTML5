@@ -80,32 +80,50 @@ function createPropertyElement(area) {
 function createPropertyElement2(property) {
 	var propertyTemp = document.createElement("div");
 	propertyTemp.setAttribute("id", property.name.camelCase());
+	propertyTemp.setAttribute("class", "property");
 	//propertyTemp.appendChild(document.createTextNode(property.name));
 
 	// Create image div
 	var imgBox = document.createElement("div");
 	var imgTmp = document.createElement("img");
 	imgBox.setAttribute("class", "img");
-	imgTmp.setAttribute("src", "");
+	imgTmp.setAttribute("src", "../photoAssets/thumbnails/thumb_"+property.propertyCode);
+	imgTmp.setAttribute("class", "propertyPhoto");
 	imgBox.appendChild(imgTmp);
 	propertyTemp.appendChild(imgBox);
 
-	// Create Property Info div
+	// Create property info div
 	var infoBox = document.createElement("div");
 	var infoTitle = document.createElement("div");
 	var infoAddress = document.createElement("div");
+	var infoRegion = document.createElement("div");
 	var infoPhone = document.createElement("div");
 	infoBox.setAttribute("class", "info");
 	infoTitle.setAttribute("class", "title");
 	infoTitle.appendChild(document.createTextNode(property.name));
 	infoAddress.setAttribute("class", "address");
-	infoAddress.appendChild(document.createTextNode("Address"));
+	infoAddress.appendChild(document.createTextNode(property.streetAddress));
+	infoRegion.setAttribute("class", "cityStateZip");
+	infoRegion.appendChild(document.createTextNode(property.city+", "+property.state+" "+property.zip));
 	infoPhone.setAttribute("class", "phone");
-	infoPhone.appendChild(document.createTextNode("Phone Number"));
+	infoPhone.appendChild(document.createTextNode(property.phoneNumber));
 	infoBox.appendChild(infoTitle);
 	infoBox.appendChild(infoAddress);
+	infoBox.appendChild(infoRegion);
 	infoBox.appendChild(infoPhone);
 	propertyTemp.appendChild(infoBox);
+
+	// Create range div
+	var rangeBox = document.createElement("div");
+	var rangeDesc = document.createElement("div");
+	var rangeFeatures = document.createElement("div");
+	rangeBox.setAttribute("class", "range");
+	rangeDesc.setAttribute("class", "desc");
+	rangeDesc.appendChild(document.createTextNode("1-3 Bedrooms starting at "+property.rentMin));
+	rangeFeatures.appendChild(document.createTextNode("Pet friendly"));
+	rangeBox.appendChild(rangeDesc);
+	rangeBox.appendChild(rangeFeatures);
+	propertyTemp.appendChild(rangeBox);
 
 	this.appendChild(propertyTemp);
 }
