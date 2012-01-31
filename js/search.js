@@ -132,6 +132,14 @@ function quickPrint(property) {
 	console.log("property: "+property.name);
 }
 
+function propertyDiv(property) {
+	/*console.log(property.name);
+	var propertyContainer = document.createElement("div");
+	var propertyDiv = document.getElementById("propertyList");
+	propertyContainer.setAttribute("id", "area");*/
+	console.log(property.parent);
+}
+
 function createCityElement(city) {
 	//console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
@@ -145,6 +153,10 @@ function createCityElement(city) {
 	/****
 	 * LEFT OFF HERE *
 	 ****/
+	if (typeof city.properties !== "undefined") {
+		//city.properties.forEach(propertyDiv);
+		console.log(JSON.stringify(city));
+	}
 }
 
 function createAreaElement(area) {
@@ -166,6 +178,7 @@ function createAreaElement(area) {
 		cityDiv.appendChild(cityContainer);
 		// Loop through all cities in this area (if any), passing along the cityContainer element
 		area.cities.forEach(createCityElement, cityContainer);
+		//area.cities.forEach(createCityElement, area.name);
 
 		/*
 		if (typeof area.properties !== "undefined") {
