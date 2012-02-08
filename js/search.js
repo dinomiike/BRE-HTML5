@@ -149,14 +149,11 @@ function createCityElement(city) {
 
 	this.appendChild(cityTemp);
 
-	// Now create the property list for all properties in this city
-	/****
-	 * LEFT OFF HERE *
-	 ****/
-	if (typeof city.properties !== "undefined") {
+	/*if (typeof city.properties !== "undefined") {
 		//city.properties.forEach(propertyDiv);
-		console.log(JSON.stringify(city));
-	}
+		//console.log(JSON.stringify(city));
+		console.log(this+": "+city.name);
+	}*/
 }
 
 function createAreaElement(area) {
@@ -179,15 +176,10 @@ function createAreaElement(area) {
 		// Loop through all cities in this area (if any), passing along the cityContainer element
 		area.cities.forEach(createCityElement, cityContainer);
 		//area.cities.forEach(createCityElement, area.name);
-
-		/*
-		if (typeof area.properties !== "undefined") {
-			// Loop through all properties in this area and stuff them into the existing propertyList div
-			area.properties.forEach(displayPropertyList);
-		}
-		*/
 	}
 
+	/*
+	 *** THIS IS ANTIQUATED. A NEW METHOD IS IN ORDER ***
 	// If the area has properties, let's build a list of them
 	if (typeof area.properties !== "undefined") {
 		// Create a container div for this property and give it an ID
@@ -199,6 +191,52 @@ function createAreaElement(area) {
 
 		area.properties.forEach(createPropertyElement2, propertyContainer);
 	}
+	*/
+	
+
+	var areaListContainer = document.getElementById("propertyList");
+
+	// 1. Build the area div
+	var areaContainer = document.createElement("div");
+	areaContainer.setAttribute("id", area.name.camelCase());
+	areaContainer.setAttribute("class", "areaList");
+	areaListContainer.appendChild(areaContainer);
+
+	// 2. If there are cities, build the city divs
+	if (typeof area.cities !== "undefined") {
+		area.cities.forEach(function(city) {
+			var cityContainer = document.createElement("div");
+			cityContainer.setAttribute("id", "city"+city.name.camelCase());
+			cityContainer.setAttribute("class", "cityList");
+
+			this.appendChild(cityContainer);
+
+			// 3. If there are properties, build the property divs
+			if (typeof city.properties !== "undefined") {
+				city.properties.forEach(function(property) {
+					var propertyContainer = document.createElement("div");
+					propertyContainer.setAttribute("id", property.name.camelCase());
+					propertyContainer.setAttribute("class", "property");
+					propertyContainer.appendChild(document.createTextNode(property.name));
+
+					this.appendChild(propertyContainer);
+				}, cityContainer);
+			}
+		}, areaContainer);
+	}
+	
+	// 4. This is an area that has no cities, the properties are direct children of the area
+	if (typeof area.properties !== "undefined") {
+		area.properties.forEach(function(property) {
+			var propertyContainer = document.createElement("div");
+			propertyContainer.setAttribute("id", property.name.camelCase());
+			propertyContainer.setAttribute("class", "property");
+			propertyContainer.appendChild(document.createTextNode(property.name));
+
+			this.appendChild(propertyContainer);
+		}, areaContainer);
+	}
+
 	/*
 	***************************
 		This needs to be moved to the createPropertyElement function.
