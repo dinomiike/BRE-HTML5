@@ -226,6 +226,7 @@ var data = {
 								"name": "Chino",
 								"properties": [
 									{
+										"propertyCode": "lax1234",
 										"name": "Enclave at Town Square",
 										"streetAddress": "11475 Central Avenue",
 										"city": "Chino",
@@ -265,6 +266,7 @@ var data = {
 								"name": "Chino Hills",
 								"properties": [
 									{
+										"propertyCode": "lax1055",
 										"name": "The Summit",
 										"streetAddress": "2400 Ridgeview Drive",
 										"city": "Chino Hills",
@@ -296,6 +298,7 @@ var data = {
 										]
 									},
 									{
+										"propertyCode": "lax1227",
 										"name": "The Heights",
 										"streetAddress": "16675 Slate Drive",
 										"city": "Chino Hills",

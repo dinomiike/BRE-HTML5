@@ -35,21 +35,21 @@ function displayPropertyList(property) {
 }
 
 function createPropertyElement(area) {
-	var selection = document.getElementById(area);
+	var selection = document.getElementById("cityList"+area);
 
 	// 1. If an area has been set before, hide it
 	if (typeof setArea.camelCaseName !== "undefined") {
 		// An area was previously selected, we need to hide it now
-		var previousSelection = document.getElementById(setArea.camelCaseName);
+		var previousSelection = document.getElementById("cityList"+setArea.camelCaseName);
 
-		// Did the last selection have a list of cities? If so we need to hide it. If not, hide the div containing cities
-		if (previousSelection !== null) {
-			document.getElementById(setArea.camelCaseName).style.display = "none";
-		} else {
-			document.getElementById("citySelector").style.display = "none";
-		}
-		document.getElementById("area"+setArea.camelCaseName).style.display = "none";
-		//console.log(document.getElementById("area"+setArea.camelCaseName));
+		// Did the last selection have a list of cities? If so we need to hide it too. If not, hide the div containing cities
+			if (previousSelection !== null) {
+				document.getElementById("cityList"+setArea.camelCaseName).style.display = "none";
+			} else {
+				document.getElementById("citySelector").style.display = "none";
+			}
+
+		document.getElementById(setArea.camelCaseName).style.display = "none";
 	}
 
 	// 2. Find out if the current clicked area has cities to show
@@ -67,14 +67,11 @@ function createPropertyElement(area) {
 
 	// Make the property div visible
 	document.getElementById("propertySelector").style.display = "inline-block";
-	document.getElementById("area"+area).style.display = "inline-block";
+	document.getElementById(area).style.display = "inline-block";
 	//toggleCityContainer(area);
 
 	// Now let's set the area based on the current click
 	setArea.camelCaseName = area;
-
-	// Currently fixed to show all from Chandler, AZ
-	//data.states[0].areas[0].properties.forEach(quickPrint);
 }
 
 function createPropertyElement2(property) {
@@ -87,7 +84,7 @@ function createPropertyElement2(property) {
 	var imgBox = document.createElement("div");
 	var imgTmp = document.createElement("img");
 	imgBox.setAttribute("class", "img");
-	imgTmp.setAttribute("src", "../photoAssets/thumbnails/thumb_"+property.propertyCode);
+	imgTmp.setAttribute("src", "../photoAssets/thumbnails/thumb_"+property.propertyCode+".jpg");
 	imgTmp.setAttribute("class", "propertyPhoto");
 	imgBox.appendChild(imgTmp);
 	propertyTemp.appendChild(imgBox);
@@ -170,7 +167,7 @@ function createAreaElement(area) {
 	if (typeof area.cities !== "undefined") {
 		var cityContainer = document.createElement("div");
 		var cityDiv = document.getElementById("citySelector");
-		cityContainer.setAttribute("id", area.name.camelCase());
+		cityContainer.setAttribute("id", "cityList"+area.name.camelCase());
 		cityContainer.setAttribute("class", "cityContainer");
 		cityDiv.appendChild(cityContainer);
 		// Loop through all cities in this area (if any), passing along the cityContainer element
@@ -213,28 +210,30 @@ function createAreaElement(area) {
 
 			// 3. If there are properties, build the property divs
 			if (typeof city.properties !== "undefined") {
-				city.properties.forEach(function(property) {
+				/*city.properties.forEach(function(property) {
 					var propertyContainer = document.createElement("div");
 					propertyContainer.setAttribute("id", property.name.camelCase());
 					propertyContainer.setAttribute("class", "property");
 					propertyContainer.appendChild(document.createTextNode(property.name));
 
 					this.appendChild(propertyContainer);
-				}, cityContainer);
+				}, cityContainer);*/
+				city.properties.forEach(createPropertyElement2, cityContainer);
 			}
 		}, areaContainer);
 	}
 	
 	// 4. This is an area that has no cities, the properties are direct children of the area
 	if (typeof area.properties !== "undefined") {
-		area.properties.forEach(function(property) {
+		/*area.properties.forEach(function(property) {
 			var propertyContainer = document.createElement("div");
 			propertyContainer.setAttribute("id", property.name.camelCase());
 			propertyContainer.setAttribute("class", "property");
 			propertyContainer.appendChild(document.createTextNode(property.name));
 
 			this.appendChild(propertyContainer);
-		}, areaContainer);
+		}, areaContainer);*/
+		area.properties.forEach(createPropertyElement2, areaContainer);
 	}
 
 	/*
