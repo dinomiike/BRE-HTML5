@@ -131,10 +131,16 @@ div.cityContainer {
 }
 
 div.cityOption {
-	width: 180px;
 	cursor: hand;
 	color: #549637;
 	padding-left: 5px;
+}
+
+div.cityOptionOff {
+	cursor: hand;
+	color: #549637;
+	padding-left: 5px;
+	text-decoration: line-through;
 }
 
 div#propertySelector {

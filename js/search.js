@@ -30,6 +30,14 @@ function toggleCityContainer(area) {
 }
 */
 
+function toggleCityDisplay(city) {
+	var toggle = document.getElementById("city"+city);
+	var cityItem = document.getElementById("cityItem"+city);
+
+	toggle.style.display = (toggle.style.display == "none") ? "" : "none";
+	cityItem.className = (cityItem.className == "cityOption") ? "cityOptionOff" : "cityOption";
+}
+
 function displayPropertyList(property) {
 	console.log("Property: "+property.name);
 }
@@ -68,7 +76,6 @@ function createPropertyElement(area) {
 	// Make the property div visible
 	document.getElementById("propertySelector").style.display = "inline-block";
 	document.getElementById(area).style.display = "inline-block";
-	//toggleCityContainer(area);
 
 	// Now let's set the area based on the current click
 	setArea.camelCaseName = area;
@@ -140,7 +147,9 @@ function propertyDiv(property) {
 function createCityElement(city) {
 	//console.log("--"+city.name);
 	var cityTemp = document.createElement("div");
+	cityTemp.setAttribute("id", "cityItem"+city.name.camelCase());
 	cityTemp.setAttribute("class", "cityOption");
+	cityTemp.setAttribute("onclick", "toggleCityDisplay(\""+city.name.camelCase()+"\")");
 
 	cityTemp.appendChild(document.createTextNode(city.name));
 
